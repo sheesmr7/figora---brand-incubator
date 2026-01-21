@@ -6,22 +6,22 @@ const WhyFigora: React.FC = () => {
     {
       name: 'Alex Rivera',
       role: 'CEO & Founder',
-      img: 'https://picsum.photos/400/500?v=41',
+      img: 'public/fig01.jpg',
     },
     {
       name: 'Alex Rivera',
       role: 'CEO & Founder',
-      img: 'https://picsum.photos/400/500?grayscale&v=42',
+      img: 'public/fig02.jpg',
     },
     {
       name: 'Alex Rivera',
       role: 'CEO & Founder',
-      img: 'https://picsum.photos/400/500?v=43',
+      img: 'public/fig03.jpg',
     },
     {
       name: 'Alex Rivera',
       role: 'CEO & Founder',
-      img: 'https://picsum.photos/400/500?v=44',
+      img: 'public/fig04.jpg',
     },
   ];
 
