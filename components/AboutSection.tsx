@@ -9,8 +9,7 @@ const AboutSection = () => {
         </h2>
 
         <p className="mt-8 font-poppins text-base md:text-lg text-gray-300 max-w-3xl mx-auto">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla iaculis
-          iaculis hendrerit.
+          We help brands turn attention into action. By aligning thoughtful design, modern technology, and data-led marketing, we create digital experiences that are clear, compelling, and built to drive measurable results.
         </p>
 
         <div className="mt-12 flex justify-center">
