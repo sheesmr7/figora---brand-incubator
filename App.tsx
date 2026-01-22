@@ -10,31 +10,40 @@ import Thinking from './components/Thinking';
 import Footer from './components/Footer';
 
 const App: React.FC = () => {
-  const aboutRef = useRef<HTMLDivElement>(null);
-  const [heroReleased, setHeroReleased] = useState(false);
+  const sentinelRef = useRef<HTMLDivElement>(null);
+  const [showHero, setShowHero] = useState(true);
 
   useEffect(() => {
-    const onScroll = () => {
-      if (!aboutRef.current) return;
+    const sentinel = sentinelRef.current;
+    if (!sentinel) return;
 
-      const rect = aboutRef.current.getBoundingClientRect();
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setShowHero(entry.isIntersecting);
+      },
+      { threshold: 0 }
+    );
 
-      // when About + Achievements section scrolls out of view (top leaves viewport)
-      setHeroReleased(rect.top <= 0);
-    };
-
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
+    observer.observe(sentinel);
+    return () => observer.disconnect();
   }, []);
 
   return (
-    <div className="relative">
+    <div className="relative min-h-screen bg-[#05010d] overflow-x-hidden">
       <Navbar />
 
-      <Hero released={heroReleased} />
+      {/* FIXED HERO — ONLY INITIALLY */}
+      {showHero && (
+        <div className="fixed inset-0 z-0 pointer-events-none">
+          <Hero />
+        </div>
+      )}
 
       <main className="relative z-10">
-        <AboutAndAchievements ref={aboutRef} />
+        {/* Spacer = hero height */}
+        <div ref={sentinelRef} className="h-screen" />
+
+        <AboutAndAchievements />
         <SolutionsAndPartners />
         <Portfolio />
         <WhyFigora />

@@ -60,7 +60,7 @@ const Achievements: React.FC = () => {
   };
 
   return (
-    <section className="relative pt-16 pb-20 bg-transparent">
+    <section className="relative pt-24 pb-32">
       <div className="container mx-auto px-6" ref={containerRef}>
 
         {/* HEADING — NO TRANSFORM */}
