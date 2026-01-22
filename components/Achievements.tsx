@@ -23,7 +23,6 @@ const Achievements: React.FC = () => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          // reset counts every time section enters
           setCounts(stats.map(() => 0));
           animateCounts();
         }
@@ -61,18 +60,18 @@ const Achievements: React.FC = () => {
   };
 
   return (
-    <section className="relative py-32 bg-transparent">
+    <section className="relative pt-16 pb-20 bg-transparent">
       <div className="container mx-auto px-6" ref={containerRef}>
 
-        {/* Heading */}
-        <FadeIn>
+        {/* HEADING — NO TRANSFORM */}
+        <FadeIn direction="none">
           <h2 className="text-center text-5xl md:text-6xl font-poppins tracking-tight text-white mb-20">
             Achievement,
             <span className="text-purple-500"> Documented.</span>
           </h2>
         </FadeIn>
 
-        {/* Cards */}
+        {/* CARDS */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto mb-16">
           {stats.map((stat, idx) => (
             <FadeIn key={idx} delay={idx * 0.12}>
@@ -89,26 +88,12 @@ const Achievements: React.FC = () => {
                   hover:shadow-[0_0_60px_rgba(168,85,247,0.25)]
                 "
               >
-                {/* Animated number */}
-                <div
-                  className="
-                    text-6xl md:text-7xl font-extrabold mb-4
-                    text-purple-400
-                    transition-colors duration-300
-                    group-hover:text-purple-300
-                  "
-                >
+                <div className="text-6xl md:text-7xl font-extrabold mb-4 text-purple-400 group-hover:text-purple-300">
                   {counts[idx]}
                   {stat.value.includes('+') && '+'}
                 </div>
 
-                <div
-                  className="
-                    text-gray-300 text-lg font-medium
-                    transition-colors duration-300
-                    group-hover:text-gray-100
-                  "
-                >
+                <div className="text-gray-300 text-lg font-medium group-hover:text-gray-100">
                   {stat.label}
                 </div>
               </div>
@@ -116,7 +101,7 @@ const Achievements: React.FC = () => {
           ))}
         </div>
 
-        {/* Description */}
+        {/* DESCRIPTION */}
         <FadeIn delay={0.4}>
           <p className="text-center text-gray-400 max-w-3xl mx-auto leading-relaxed text-sm md:text-base">
             We build brands that click—delivering ROI-driven digital transformation

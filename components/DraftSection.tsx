@@ -5,7 +5,7 @@ const DraftSection: React.FC = () => {
   return (
     <section
       id="contact"
-      className="relative py-32 bg-[#05010d] overflow-hidden"
+      className="relative py-32 bg-[#05010d] overflow-hidden font-poppins"
     >
       {/* Subtle Purple Glow */}
       <div className="absolute inset-0 pointer-events-none">

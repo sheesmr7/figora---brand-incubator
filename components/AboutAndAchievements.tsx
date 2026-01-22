@@ -1,32 +1,20 @@
-// AboutAndAchievements.tsx
+import { forwardRef } from 'react';
 import AboutSection from './AboutSection';
 import Achievements from './Achievements';
 
-const AboutAndAchievements = () => {
+const AboutAndAchievements = forwardRef<HTMLDivElement>((_, ref) => {
   return (
-    <section
-      className="relative overflow-hidden py-1"
-      style={{
-        background: `
-          radial-gradient(
-            900px 900px at 85% 12%,
-            rgba(147, 51, 234, 0.65),
-            rgba(0, 0, 0, 0) 60%
-          ),
-          linear-gradient(
-            135deg,
-            #000000 0%,
-            #05010d 30%,
-            #1a0630 60%,
-            #000000 100%
-          )
-        `,
-      }}
-    >
-      <AboutSection />
-      <Achievements />
+    <section ref={ref} className="relative z-10 mt-[100vh]">
+      {/* DARK SECTION */}
+      <div className="relative bg-about-gradient rounded-t-[48px]">
+        <AboutSection />
+        <Achievements />
+      </div>
+
+      {/* FADE OUT INTO NEXT SECTION */}
+      <div className="pointer-events-none h-32 -mt-32 bg-gradient-to-b from-[#05010d] to-transparent" />
     </section>
   );
-};
+});
 
 export default AboutAndAchievements;

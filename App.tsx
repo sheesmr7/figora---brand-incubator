@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import AboutAndAchievements from './components/AboutAndAchievements';
@@ -10,41 +10,38 @@ import Thinking from './components/Thinking';
 import Footer from './components/Footer';
 
 const App: React.FC = () => {
+  const aboutRef = useRef<HTMLDivElement>(null);
+  const [heroReleased, setHeroReleased] = useState(false);
+
   useEffect(() => {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href')?.substring(1);
-        if (targetId) {
-          const element = document.getElementById(targetId);
-          if (element) {
-            window.scrollTo({
-              top: element.offsetTop - 80,
-              behavior: 'smooth',
-            });
-          }
-        }
-      });
-    });
+    const onScroll = () => {
+      if (!aboutRef.current) return;
+
+      const rect = aboutRef.current.getBoundingClientRect();
+
+      // when About + Achievements section scrolls out of view (top leaves viewport)
+      setHeroReleased(rect.top <= 0);
+    };
+
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#05010d] selection:bg-purple-500 selection:text-white">
+    <div className="relative">
       <Navbar />
-      <main>
-        <Hero />
 
-        {/* Shared dark gradient */}
-        <AboutAndAchievements />
+      <Hero released={heroReleased} />
 
-        {/* Shared white–purple gradient */}
+      <main className="relative z-10">
+        <AboutAndAchievements ref={aboutRef} />
         <SolutionsAndPartners />
-
         <Portfolio />
         <WhyFigora />
         <DraftSection />
         <Thinking />
       </main>
+
       <Footer />
     </div>
   );

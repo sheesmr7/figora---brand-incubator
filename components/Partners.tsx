@@ -5,7 +5,7 @@ const Partners: React.FC = () => {
   const logos = Array(8).fill('Alrams');
 
   return (
-    <section className="relative py-32 bg-transparent overflow-hidden">
+    <section className="relative py-32 bg-transparent overflow-hidden font-poppins">
       <div className="container mx-auto px-6 text-center">
 
         {/* Heading */}

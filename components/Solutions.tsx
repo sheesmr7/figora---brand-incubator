@@ -3,7 +3,7 @@ import FadeIn from './FadeIn';
 
 const Solutions: React.FC = () => {
   return (
-    <section className="relative py-32 bg-transparent" id="service">
+    <section className="relative py-32 bg-transparent font-poppins" id="service">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           

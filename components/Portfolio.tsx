@@ -44,7 +44,7 @@ const Portfolio: React.FC = () => {
   };
 
   return (
-    <section className="relative py-32 overflow-hidden" id="portfolio">
+    <section className="relative py-32 overflow-hidden font-poppins bg-about-gradient rounded-b-[48px]" id="portfolio">
       <div className="container mx-auto px-6 relative">
 
         {/* Header */}

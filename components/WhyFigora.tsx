@@ -28,7 +28,7 @@ const WhyFigora: React.FC = () => {
   return (
     <section
       id="team"
-      className="py-32"
+      className="py-32 font-poppins"
       style={{
         background: 'linear-gradient(135deg, #ffffff 0%, #f6f0ff 100%)',
       }}
@@ -63,22 +63,22 @@ const WhyFigora: React.FC = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 max-w-6xl mx-auto">
           {team.map((member, i) => (
             <FadeIn key={i} delay={i * 0.08}>
-              <div className="flex flex-col items-center text-center">
+              <div className="flex flex-col items-center text-center group cursor-pointer">
 
                 {/* Image */}
-                <div className="w-full max-w-[240px] overflow-hidden rounded-2xl aspect-[4/5] mb-4">
+                <div className="w-full max-w-[240px] overflow-hidden rounded-2xl aspect-[4/5] mb-4 shadow-md transition-all duration-500 group-hover:shadow-xl group-hover:shadow-purple-500/30">
                   <img
                     src={member.img}
                     alt={member.name}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                 </div>
 
                 {/* Text */}
-                <h4 className="text-sm font-semibold text-gray-900">
+                <h4 className="text-sm font-semibold text-gray-900 transition-colors duration-300 group-hover:text-purple-600">
                   {member.name}
                 </h4>
-                <p className="text-xs text-purple-600 mt-1">
+                <p className="text-xs text-purple-600 mt-1 transition-colors duration-300 group-hover:text-purple-800">
                   {member.role}
                 </p>
               </div>

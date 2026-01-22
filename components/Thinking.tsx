@@ -13,7 +13,7 @@ const Thinking: React.FC = () => {
   return (
     <section
       id="thinking"
-      className="py-32"
+      className="py-32 font-poppins"
       style={{ background: 'linear-gradient(135deg, #ffffff 0%, #f6f0ff 100%)' }}
     >
       <div className="container mx-auto px-6">

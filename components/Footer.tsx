@@ -4,7 +4,7 @@ import { FaWhatsapp, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="relative bg-black pt-32 pb-16 overflow-hidden">
+    <footer className="relative bg-black pt-32 pb-16 overflow-hidden font-poppins">
       {/* Top Accent Line */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-400/60 to-transparent" />
 
@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
 
           <div className="mt-10 flex justify-center">
             <button className="group flex items-center gap-3 px-7 py-3 rounded-full bg-purple-600 text-white font-medium hover:scale-105 transition-transform">
-              Draft Your Resume
+              Connect with us to start.
               <span className="w-8 h-8 rounded-full bg-purple-500 flex items-center justify-center group-hover:bg-purple-400 transition-colors">
                 ↗
               </span>

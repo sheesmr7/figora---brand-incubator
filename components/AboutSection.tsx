@@ -1,11 +1,12 @@
 const AboutSection = () => {
   return (
-    <section className="relative py-32 bg-transparent">
+    <section className="relative pt-32 pb-16 bg-transparent">
       <div className="container mx-auto px-6 text-center max-w-5xl">
-        <h2 className="font-poppins text-3xl md:text-4xl lg:text-5xl font-semibold text-white">
-          We Build Brands That Click. Delivering ROI-driven digital transformation
-          by mastering the convergence of Design Systems, Emerging Tech, and
-          Growth Marketing.
+        <h2 className="font-poppins text-3xl md:text-4xl lg:text-5xl font-semibold text-white leading-relaxed md:leading-loose lg:leading-[1.4] tracking-tight">
+          We Build Brands That Click. <br className="hidden md:block" />
+          Delivering ROI-driven digital transformation <br className="hidden md:block" />
+          by mastering the convergence of Design Systems, <br className="hidden md:block" />
+          Emerging Tech, and Growth Marketing.
         </h2>
 
         <p className="mt-8 font-poppins text-base md:text-lg text-gray-300 max-w-3xl mx-auto">

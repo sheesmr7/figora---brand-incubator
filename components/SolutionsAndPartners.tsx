@@ -5,7 +5,7 @@ import Partners from './Partners';
 const SolutionsAndPartners = () => {
   return (
     <section
-      className="relative overflow-hidden"
+      className="relative -mt-24 pt-24 overflow-hidden"
       style={{
         background: `
           radial-gradient(
